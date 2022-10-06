@@ -1,0 +1,9 @@
+<form [formGroup]="form">
+  <input formControlName="title" />
+  <select formControlName="complited">
+    <option value="null">All</option>
+    <option value="true" selected>Complited</option>
+    <option value="false">Not complited</option>
+  </select>
+  <button (click)="setQueries()">Filter</button>
+</form>

@@ -1,0 +1,69 @@
+{
+  "root": true,
+  "ignorePatterns": ["**/*"],
+  "plugins": ["@nrwl/nx", "prettier"],
+  "overrides": [
+    {
+      "files": ["*.html"],
+      "rules": {
+        "max-len": [
+          "error",
+          {
+            "code": 120
+          }
+        ]
+      }
+    },
+    {
+      "files": ["*.ts"],
+      "parserOptions": {
+        "project": ["./tsconfig.json"]
+      },
+      "extends": [
+        "plugin:@typescript-eslint/recommended-requiring-type-checking",
+        "prettier"
+      ],
+      "rules": {
+        "prettier/prettier": "error",
+        "@typescript-eslint/quotes": ["error", "single"],
+        "@typescript-eslint/no-unused-expressions": [
+          "error",
+          {
+            "allowShortCircuit": true
+          }
+        ],
+        "@typescript-eslint/unbound-method": [
+          "error",
+          {
+            "ignoreStatic": true
+          }
+        ],
+        "max-len": [
+          "error",
+          {
+            "code": 120,
+            "ignorePattern": "^import .*"
+          }
+        ],
+        "@angular-eslint/directive-selector": [
+          "error",
+          {
+            "type": "attribute",
+            "prefix": "app",
+            "style": "camelCase"
+          }
+        ],
+        "@angular-eslint/component-selector": [
+          "error",
+          {
+            "type": "element",
+            "prefix": "app",
+            "style": "kebab-case"
+          }
+        ],
+        "comma-dangle": ["error", "always-multiline"],
+        "curly": ["warn", "multi-line"]
+      }
+    }
+  ]
+}

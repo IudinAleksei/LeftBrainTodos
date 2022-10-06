@@ -1,0 +1,22 @@
+{
+  "ignoreFiles": [
+    "**/*"
+  ],
+  "overrides": [
+    {
+      "files": [
+        "**/*.css",
+        "**/*.scss"
+      ],
+      "extends": [
+        "stylelint-config-standard",
+        "stylelint-config-prettier",
+        "stylelint-config-recommended",
+        "stylelint-config-recommended-scss",
+        "stylelint-config-property-sort-order-smacss"
+      ],
+      "rules": {}
+    }
+  ],
+  "rules": {}
+}
