@@ -7,9 +7,10 @@ import { HttpClientModule } from '@angular/common/http';
 import { FilterComponent } from './components/filter/filter.component';
 import { ResultComponent } from './components/result/result.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { TodoComponent } from './components/todo/todo.component';
 
 @NgModule({
-  declarations: [AppComponent, FilterComponent, ResultComponent],
+  declarations: [AppComponent, FilterComponent, ResultComponent, TodoComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
