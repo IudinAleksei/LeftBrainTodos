@@ -1,1 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
+@import '~normalize.css';
+
+:root {
+  --filter-height: 68px;
+}

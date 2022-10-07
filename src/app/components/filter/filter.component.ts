@@ -12,7 +12,7 @@ import { take } from 'rxjs';
 export class FilterComponent implements OnInit {
   form = new FormGroup({
     title: new FormControl(''),
-    complited: new FormControl(null),
+    completed: new FormControl('all'),
   });
 
   constructor(private router: Router, private route: ActivatedRoute) {}
@@ -27,12 +27,9 @@ export class FilterComponent implements OnInit {
       .subscribe((params) => this.form.patchValue(params));
   }
 
-  setQueries() {
+  setQueries(): void {
     this.router.navigate([], {
-      queryParams: {
-        title: this.form.controls.title.value,
-        complited: this.form.controls.complited.value,
-      },
+      queryParams: this.form.value,
     });
   }
 }

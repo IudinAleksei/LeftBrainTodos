@@ -1,6 +1,8 @@
+import { ITodo } from './../../models/todo.model';
+import { IFilterValue } from './../../models/filter.model';
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { map } from 'rxjs';
+import { combineLatest, map, switchMap } from 'rxjs';
 
 import { DataService } from '../../services/data.service';
 
@@ -11,11 +13,17 @@ import { DataService } from '../../services/data.service';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class ResultComponent {
-  todos$ = this.dataService
-    .getAll()
-    .pipe(map((todos) => todos.filter((todo) => todo.completed)));
+  todos$ = combineLatest([
+    this.dataService.getAll(),
+    this.route.queryParams,
+  ]).pipe(
+    switchMap(([todos, filter]) =>
+      this.dataService.getFilteredTodos(todos, filter as IFilterValue),
+    ),
+  );
 
-  constructor(private dataService: DataService, private route: ActivatedRoute) {
-    route.queryParams.subscribe((params) => console.log(params));
-  }
+  constructor(
+    private dataService: DataService,
+    private route: ActivatedRoute,
+  ) {}
 }

@@ -1,4 +1,6 @@
+import { Params } from '@angular/router';
+
 export interface IFilterValue {
   title: string;
-  completed: boolean;
+  completed: 'all' | 'completed' | 'incompleted';
 }
