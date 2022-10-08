@@ -1,2 +1,16 @@
-<div>{{ todo.title }}</div>
-<div>{{ todo.completed }}</div>
+<div>
+  <p class="todo__id">ID: {{ todo.id }}</p>
+  <h3 class="todo__title">{{ todo.title }}</h3>
+</div>
+<div>
+  <p class="todo__userId">{{ todo.userId }}</p>
+  <p class="todo__label">UserID</p>
+
+  <button
+    type="button"
+    class="btn btn-light completed-btn"
+    [disabled]="todo.completed"
+  >
+    Set complited
+  </button>
+</div>

@@ -1,1 +1,3 @@
-<app-todo *ngFor="let todo of todos$ | async" [todo]="todo"> </app-todo>
+<div class="todos app-container">
+  <app-todo *ngFor="let todo of todos$ | async" [todo]="todo"> </app-todo>
+</div>

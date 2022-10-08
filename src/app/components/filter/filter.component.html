@@ -1,9 +1,9 @@
-<form [formGroup]="form">
-  <input formControlName="title" />
-  <select formControlName="completed">
+<form [formGroup]="form" class="form app-container">
+  <input formControlName="title" class="form-control" placeholder="Search..." />
+  <select formControlName="completed" class="form-select">
     <option value="all">All</option>
     <option value="completed">Completed</option>
     <option value="incompleted">Not completed</option>
   </select>
-  <button (click)="setQueries()">Filter</button>
+  <button (click)="setQueries()" class="btn btn-primary">Find...</button>
 </form>
