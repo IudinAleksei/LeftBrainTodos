@@ -1,14 +1,19 @@
 :host {
   display: block;
-  padding: 0 1rem;
   height: calc(100vh - var(--filter-height) - 4rem);
+  padding: 0 1rem;
 }
 
 .todos {
   display: flex;
-  justify-content: space-between;
   flex-wrap: wrap;
-  gap: 2.5rem;
+  justify-content: space-between;
   margin: 0 auto;
   padding-bottom: 1rem;
+  gap: 2.5rem;
+}
+
+.info {
+  display: block;
+  margin: 0 auto;
 }

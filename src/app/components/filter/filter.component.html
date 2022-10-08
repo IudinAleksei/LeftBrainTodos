@@ -5,5 +5,11 @@
     <option value="completed">Completed</option>
     <option value="incompleted">Not completed</option>
   </select>
-  <button (click)="setQueries()" class="btn btn-primary">Find...</button>
+  <button
+    (click)="setQueries()"
+    class="btn btn-primary"
+    [disabled]="form.pristine"
+  >
+    Find...
+  </button>
 </form>

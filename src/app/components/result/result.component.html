@@ -1,3 +1,11 @@
-<div class="todos app-container">
-  <app-todo *ngFor="let todo of todos$ | async" [todo]="todo"> </app-todo>
+<div class="todos app-container" *ngIf="todos$ | async as todos; else loading">
+  <app-todo *ngFor="let todo of todos" [todo]="todo"> </app-todo>
+  <ng-container *ngIf="todos.length === 0">
+    <p class="info">Data not found</p>
+  </ng-container>
 </div>
+<ng-template #loading>
+  <div class="spinner-border text-primary info" role="status">
+    <span class="visually-hidden">Loading...</span>
+  </div>
+</ng-template>

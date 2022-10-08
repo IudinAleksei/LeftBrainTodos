@@ -38,5 +38,7 @@ export class FilterComponent implements OnInit {
     this.router.navigate([], {
       queryParams: this.form.value,
     });
+
+    this.form.markAsPristine();
   }
 }
